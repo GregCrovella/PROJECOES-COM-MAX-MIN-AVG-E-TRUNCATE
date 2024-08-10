@@ -1,0 +1,79 @@
+# PROJECOES-COM-MAX-MIN-AVG-E-TRUNCATE
+Neste exercício pratico fiz a criação de uma tabela visando praticar algumas projeções com a inserções de dados que estabeleci na database criada, como por exemplo: MAX, MIN, AVG E TRUNCATE.
+
+/* CRIANDO UMA TABELA */
+
+    CREATE TABLE VENDEDORES(
+     IDVENDEDOR INT PRIMARY KEY AUTO_INCREMENT,
+      NOME VARCHAR(30),
+       SEXO CHAR(1),
+        JANEIRO FLOAT(10,2),
+         FEVEREIRO FLOAT(10,2),
+          MARCO FLOAT(10,2) 
+          );
+
+![Captura de tela 2024-08-10 163920](https://github.com/user-attachments/assets/389bbbb4-d1ca-4e3b-ad89-ba191c2ac123)
+
+
+/* INSERINDO DADOS NO BANCO */
+
+    INSERT INTO VENDEDORES VALUES(NULL,'CARLOS','M',845558.45,25544.48,2954392.50);
+    INSERT INTO VENDEDORES VALUES(NULL,'MARIA','F',8407898.21,976593.48,087562.50);
+    INSERT INTO VENDEDORES VALUES(NULL,'ANTONIO','M',8566758.21,8679093.48,2123392.50);
+    INSERT INTO VENDEDORES VALUES(NULL,'CLARA','F',596958.21,8244493.48,267862.50);
+    INSERT INTO VENDEDORES VALUES(NULL,'ANDERSON','M',12238.21,2343393.48,245392.50);
+    INSERT INTO VENDEDORES VALUES(NULL,'IVONE','F',445658.21,447493.48,7737392.50);
+    INSERT INTO VENDEDORES VALUES(NULL,'JOAO','M',84465458.21,098493.48,9756392.50);
+    INSERT INTO VENDEDORES VALUES(NULL,'CELIA','F',223758.21,775493.48,675392.50);
+
+    
+![Captura de tela 2024-08-10 164320](https://github.com/user-attachments/assets/88703cad-124c-4166-a109-8a9e9e02806a)
+
+
+/* PROJEÇÕES COM MAX, MIN, AVG E TRUNCATE */
+
+
+/* MAX - TRAZ O VALOR MAXIMO DE UMA COLUNA */
+
+    SELECT MAX(FEVEREIRO) AS MAIOR_FEV
+     FROM VENDEDORES;
+
+![image](https://github.com/user-attachments/assets/90e0d158-e6e7-4b2d-9431-ec88f171226f)
+
+
+/* MIN - TRAZ O VALOR MINIMO DE UMA COLUNA */
+
+    SELECT MIN(FEVEREIRO) AS MIN_FEV
+     FROM VENDEDORES;
+
+![image](https://github.com/user-attachments/assets/a3fbcd8d-335e-48c9-bdc7-735a00c4b75b)
+
+
+/* AVG - TRAZ O VALOR MEDIO DE UMA COLUNA */
+
+    SELECT AVG(FEVEREIRO) AS MEDIA_FEV
+     FROM VENDEDORES;
+
+![image](https://github.com/user-attachments/assets/d7049edd-7196-4e8d-b6b8-3c47280e9384)
+
+
+/* TRUNCATE - TRAZ NESTE CASO SOMENTE 2 CASAS DECIMAIS DEPOIS DO PONTO */
+
+    SELECT MAX(JANEIRO) AS MAX_JAN,
+           MIN(JANEIRO) AS MIN_JAN,
+           TRUNCATE (AVG(JANEIRO),2) AS MEDIA_JAN
+    FROM VENDEDORES; 
+
+![image](https://github.com/user-attachments/assets/3f5b001c-ba98-408b-bc1f-e75635a63489)
+
+
+
+
+     
+
+
+
+
+
+
+
